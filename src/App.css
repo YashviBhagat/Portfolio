@@ -73,7 +73,7 @@
 html {
   scroll-behavior: smooth;
   
-  
+   
 }
 
 body,
@@ -117,7 +117,7 @@ img {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
-  padding: 6rem 0 2rem;
+  padding: 5rem 0 2rem;
 }
 
 .section__title {
@@ -128,7 +128,7 @@ img {
 .section__subtitle {
   display: block;
   font-size: var(--small-font-size);
-  margin-bottom: 4rem;
+  margin-bottom: 1.5rem;
 }
 
 .section__title,
