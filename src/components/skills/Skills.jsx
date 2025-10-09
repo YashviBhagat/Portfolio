@@ -1,18 +1,55 @@
 import React from 'react';
 import './skills.css';
 
-const skillsData = [
+import {
+  SiPython, SiHtml5, SiCss3, SiJavascript, SiReact,
+  SiMysql, SiTensorflow, SiKeras, SiScikitlearn, SiNumpy,
+  SiPandas, SiTableau, SiPytorch, SiOpencv,
+   SiGithub, SiOpenai
+} from 'react-icons/si';
+
+import {
+  FaJava, FaMicrosoft, FaCode, FaAws, FaChartBar
+} from 'react-icons/fa';
+
+const skillGroups = [
   {
     title: 'Programming Languages',
-    skills: ['Python', 'Java', 'C', 'C++', 'HTML', 'CSS', 'JavaScript', 'React', 'SQL'],
+    skills: [
+      { icon: <SiPython />, name: 'Python' },
+      { icon: <FaJava />, name: 'Java' },
+      { icon: <FaCode />, name: 'C' },
+      { icon: <FaCode />, name: 'C++' },
+      { icon: <SiHtml5 />, name: 'HTML' },
+      { icon: <SiCss3 />, name: 'CSS' },
+      { icon: <SiJavascript />, name: 'JavaScript' },
+      { icon: <SiReact />, name: 'React' },
+      { icon: <SiMysql />, name: 'SQL' },
+    ],
   },
   {
     title: 'Frameworks & Libraries',
-    skills: ['TensorFlow', 'Keras', 'Scikit-learn', 'NumPy', 'Pandas', 'Matplotlib', 'PyTorch', 'OpenCV'],
+    skills: [
+      { icon: <SiTensorflow />, name: 'TensorFlow' },
+      { icon: <SiKeras />, name: 'Keras' },
+      { icon: <SiScikitlearn />, name: 'Scikit-learn' },
+      { icon: <SiNumpy />, name: 'NumPy' },
+      { icon: <SiPandas />, name: 'Pandas' },
+      { icon: <SiPytorch />, name: 'PyTorch' },
+      { icon: <SiOpencv />, name: 'OpenCV' },
+    ],
   },
   {
     title: 'Tools & Platforms',
-    skills: ['GitHub', 'AWS (Web Services)', 'Tableau', 'PowerBI', 'Microsoft Copilot', 'OpenAI'],
+    skills: [
+      { icon: <SiGithub />, name: 'GitHub' },
+      
+      { icon: <FaAws />, name: 'AWS' },
+      { icon: <SiTableau />, name: 'Tableau' },
+      { icon: <FaChartBar />, name: 'PowerBI' },
+      { icon: <FaMicrosoft />, name: 'Copilot' },
+      { icon: <SiOpenai />, name: 'OpenAI' },
+    ],
   },
 ];
 
@@ -20,23 +57,19 @@ const Skills = () => {
   return (
     <section className="skills section" id="skills">
       <h2 className="section__title">Skills</h2>
-      <span className="section__subtitle">My technical toolbox</span>
+      <span className="section__subtitle">Technologies I work with</span>
 
-      <div className="skills__container container grid">
-        {skillsData.map((category, index) => (
-          <div className="skills__content" key={index}>
-            <h3 className="skills__title">{category.title}</h3>
-            <div className="skills__box single-column">
-              <div className="skills__group">
-                {category.skills.map((skill) => (
-                  <div className="skills__data" key={skill}>
-                    <i className="bx bx-badge-check"></i>
-                    <div>
-                      <h3 className="skills__name">{skill}</h3>
-                    </div>
-                  </div>
-                ))}
-              </div>
+      <div className="skills__group-wrapper container">
+        {skillGroups.map((group, index) => (
+          <div className="skills__group-box" key={index}>
+            <h3 className="skills__group-title">{group.title}</h3>
+            <div className="skills__icon-grid">
+              {group.skills.map((skill, i) => (
+                <div className="skill__icon" key={i}>
+                  {skill.icon}
+                  <span className="skill__tooltip">{skill.name}</span>
+                </div>
+              ))}
             </div>
           </div>
         ))}

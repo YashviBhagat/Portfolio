@@ -1,62 +1,56 @@
-.skills__container {
+.skills__group-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    justify-content: center;
-    align-items: flex-start;
+    margin-top: 3rem;
   }
   
-  .skills__content {
+  .skills__group-box {
     background-color: var(--container-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    border-radius: 1.25rem;
+    padding: 1.5rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
     transition: 0.3s ease;
   }
   
-  .skills__content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
-  }
-  
-  .skills__title {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-semi-bold);
+  .skills__group-title {
     text-align: center;
-    margin-bottom: var(--mb-1-5);
-    color: var(--title-color-dark);
-  }
-  
-  .skills__box.single-column {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .skills__group {
-    display: grid;
-    row-gap: 1rem;
-  }
-  
-  .skills__data {
-    display: flex;
-    align-items: center;
-    column-gap: 0.5rem;
-  }
-  
-  .skills__name {
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-medium);
-  }
-  
-  .skills .bx-badge-check {
-    font-size: 1.2rem;
+    font-size: var(--h3-font-size);
+    margin-bottom: 1.5rem;
     color: var(--title-color);
   }
   
-  /* Responsive tweaks */
-  @media screen and (max-width: 768px) {
-    .skills__container {
-      grid-template-columns: 1fr;
-    }
+  .skills__icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 1.25rem;
+    justify-items: center;
+  }
+  
+  .skill__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.2rem;
+    color: var(--title-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: default;
+  }
+  
+  .skill__tooltip {
+    font-size: 0.75rem;
+    color: var(--text-color);
+    margin-top: 0.3rem;
+    transition: font-weight 0.3s ease, transform 0.3s ease;
+  }
+  
+  .skill__icon:hover {
+    transform: scale(1.15);
+    color: var(--title-color-dark);
+  }
+  
+  .skill__icon:hover .skill__tooltip {
+    font-weight: bold;
+    transform: scale(1.05);
   }
   
