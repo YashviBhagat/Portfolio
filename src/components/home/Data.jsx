@@ -7,11 +7,11 @@ const Data = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const roles = [
+  const roles = React.useMemo(() => [
     'Machine Learning Engineer',
     'Software Engineer',
     'Data Scientist'
-  ];
+  ], []);
 
   useEffect(() => {
     const handleType = () => {
@@ -36,7 +36,7 @@ const Data = () => {
 
     const timer = setTimeout(handleType, typingSpeed);
     return () => clearTimeout(timer);
-  }, [text, isDeleting, loopNum, typingSpeed]);
+  }, [text, isDeleting, loopNum, typingSpeed, roles]);
 
   return (
     <div className="home__data">
