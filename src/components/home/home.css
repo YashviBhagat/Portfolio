@@ -184,10 +184,15 @@ color: #19183B;
 }
 
 .home__img {
-    width: 50%;
-    height: 50%;
-    flex-shrink: 0;
+    width: 220px;       /* Or whatever fixed size you want */
+    height: 280px;
+}
+  
+.home__img img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    border-radius: 1rem;  /* Optional rounded corners */
 }
 
 
@@ -210,24 +215,31 @@ color: #19183B;
     text-align: center; /* Center description on mobile */
 }
 }
-/* For small devices */
 @media screen and (max-width: 350px) {
-.home__img {
-    width: 80%;
-    height: 45%;
-}
-
-.home__hand {
-    width: 22px;
-    height: 22px;
-}
-
-.home__social-icon {
-    font-size: 1.2rem;
-}
-
-.home__subtitle {
-    font-size: var(--normal-font-size);
-}
-}
+    .home__img {
+        width: 220px;       /* Or whatever fixed size you want */
+        height: 280px;
+    }
+      
+    .home__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;  /* Optional rounded corners */
+    }
+  
+    .home__hand {
+        width: 22px;
+        height: 22px;
+    }
+  
+    .home__social-icon {
+        font-size: 1.2rem;
+    }
+  
+    .home__subtitle {
+        font-size: var(--normal-font-size);
+    }
+  }
+  
 
