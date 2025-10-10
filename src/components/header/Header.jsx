@@ -20,13 +20,21 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Track active section on scroll
+  // Track active section on scroll and set initial active section
   useEffect(() => {
+    // Set activeNav based on URL hash or default to #home
+    const hash = window.location.hash;
+    if (hash) {
+      setActiveNav(hash);
+    } else {
+      setActiveNav('#home');
+    }
+
     const sections = document.querySelectorAll('section[id]');
 
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveNav(`#${entry.target.id}`);
           }
@@ -34,15 +42,15 @@ const Header = () => {
       },
       {
         root: null,
-        rootMargin: '-80px 0px 0px 0px', // Offset for fixed header height
-        threshold: 0.3, // Adjust sensitivity (lower = more responsive)
+        rootMargin: '-80px 0px 0px 0px', // Adjust for header height
+        threshold: 0.3,
       }
     );
 
-    sections.forEach(section => observer.observe(section));
+    sections.forEach((section) => observer.observe(section));
 
     return () => {
-      sections.forEach(section => observer.unobserve(section));
+      sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
 

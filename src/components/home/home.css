@@ -166,26 +166,30 @@ color: #19183B;
 /* For medium devices */
 @media screen and (max-width: 768px) {
 .home__content {
-    grid-template-columns: 1fr; /* Change to single column */
-    padding-top: 3.5rem;
-    row-gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    flex-wrap: wrap; 
 }
 
 .home__social {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: center; /* Center social icons */
-    margin-bottom: var(--mb-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .home__img {
-    order: 1; /* Photo comes second */
-    justify-self: center;
-    width: 250px;
-    height: 250px;
-    grid-column: 1;
-    grid-row: 2;
+    width: 50%;
+    height: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
 }
+
 
 .home__data {
     order: 2; /* Text comes third */
