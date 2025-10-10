@@ -1,0 +1,108 @@
+.contact__container {
+    padding-bottom: 3rem;
+}
+
+.contact__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Info Cards */
+.contact__card {
+    background-color: var(--container-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 3rem 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.contact__card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.contact__card-icon {
+    font-size: 3rem;
+    color: var(--title-color);
+    margin-bottom: var(--mb-1);
+}
+
+.contact__card-title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-0-75);
+}
+
+.contact__card-data {
+    display: block;
+    margin-bottom: var(--mb-1-5);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+}
+
+.contact__button {
+    color: var(--title-color);
+    font-size: var(--normal-font-size);
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: var(--font-medium);
+}
+
+.contact__button:hover {
+    color: var(--title-color-dark);
+}
+
+.contact__button-icon {
+    font-size: 1.25rem;
+    transition: 0.3s;
+}
+
+.contact__button:hover .contact__button-icon {
+    transform: translateX(0.25rem);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 992px) {
+    .contact__cards {
+        max-width: 600px;
+    }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+    .contact__cards {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 1.5rem;
+    }
+
+    .contact__card {
+        padding: 2.5rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .contact__card {
+        padding: 2rem 1rem;
+    }
+
+    .contact__card-icon {
+        font-size: 2.5rem;
+    }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .contact__container {
+        padding: 0 1rem;
+    }
+}

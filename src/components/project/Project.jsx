@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./project.css";
 import { projectsData } from './projectsData';
 import { researchData } from './researchData';
+
 import {
     SiPython, SiHtml5, SiCss3, SiJavascript, SiReact,
     SiMysql, SiTensorflow, SiKeras, SiScikitlearn, SiNumpy,
@@ -10,11 +11,12 @@ import {
   } from 'react-icons/si';
   
   import {
-    FaJava, FaMicrosoft, FaAws, FaChartBar
+    FaJava, FaMicrosoft, FaAws, FaChartBar,
   } from 'react-icons/fa';
 
 
 const techIcons = {
+    
     Python: <SiPython size={24} />,
     CSS : <SiCss3 size={24} />,
     HTML : <SiHtml5 size={24} />,
@@ -50,9 +52,16 @@ const Project = () => {
 
     const renderProjectCard = (item) => (
         <div className="project__content" key={item.id}>
+        {item.image && (
+                <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="project__image"
+                />
+            )}
             <div className="project__header">
                 <div className="project__left">
-                    <i className={`uil ${item.icon} project__icon`}></i>
+                    
                     <h3 
                         className="project__title"
                         dangerouslySetInnerHTML={{ __html: item.titleBreak }}
@@ -96,7 +105,7 @@ const Project = () => {
                     className={activeTab === 2 ? "project__tab active-tab" : "project__tab"}
                     onClick={() => setActiveTab(2)}
                 >
-                    <i className="uil uil-book-open project__tab-icon"></i> Research Work
+                    <i className="uil uil-atom project__tab-icon"></i> AI/ML
                 </div>
             </div>
 

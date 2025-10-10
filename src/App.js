@@ -7,6 +7,7 @@ import Skills from './components/skills/Skills';
 import Qualification from './components/qualification/Qualification';
 import Project from './components/project/Project';
 import Scrollup from './components/scrollup/Scrollup';
+import Contact from './components/contact/Contact';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Project />
       </main>
       <Scrollup />
+      <Contact />
     </>
   );
 }
